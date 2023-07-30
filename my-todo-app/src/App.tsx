@@ -8,8 +8,15 @@ const App = () => {
     const todoInputRef = useRef<HTMLInputElement>(null);
 
     const toggleTodo = (selectedTodoId: string) => {
-        const newTodos = todos.map(todo => todo.id === selectedTodoId ? {...todo, completed: !todo.completed} : todo);
-        setTodos(newTodos);
+        setTodos(originalTodos => {
+            return originalTodos.map(todo => {
+                if (todo.id === selectedTodoId) {
+                    return {...todo, completed: !todo.completed};
+                } else {
+                    return todo;
+                }
+            });
+        });
     };
     const addTodo = (text: string) => {
         const newTodo: Todo = {id: uuidv4(), text: text, completed: false};
