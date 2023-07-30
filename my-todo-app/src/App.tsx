@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {TodoList} from "./assets/components/TodoList.tsx";
+import {TodoList} from "./components/TodoList.tsx";
 import { Todo } from './types.ts'
 import { v4 as uuidv4 } from 'uuid';
 
