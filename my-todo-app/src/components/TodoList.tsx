@@ -1,10 +1,10 @@
-import {Todo} from "../../types.ts";
 import React from "react";
 import {TodoItem} from "./TodoItem.tsx";
+import {Todo} from "../types.ts";
 
 type TodoListProps = {
     todos: Todo[];
-    toggleTodo: (id: number) => void;
+    toggleTodo: (id: string) => void;
 };
 
 export const TodoList: React.FC<TodoListProps> = ({todos, toggleTodo}) => {
@@ -15,12 +15,3 @@ export const TodoList: React.FC<TodoListProps> = ({todos, toggleTodo}) => {
         }
     </ul>
 )}
-
-// export const TodoList = ({todos, toggleTodo}: TodoListProps) => {
-//     return(
-//         <ul>
-//             {
-//                 todos.map(todo => (<TodoItem key = {todo.id} todo = {todo} toggleTodo = {toggleTodo}/>))
-//             }
-//         </ul>
-//     )}
